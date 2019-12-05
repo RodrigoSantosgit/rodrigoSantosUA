@@ -129,7 +129,7 @@
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
                       <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Horário</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800">10:30 - 12:30</div>
+                      <div id="horas" class="h5 mb-0 font-weight-bold text-gray-800">10:30 - 12:30</div>
                     </div>
                     <div class="col-auto">
                       <i class="fas fa-calendar fa-2x text-gray-300"></i>
@@ -141,22 +141,22 @@
 	  </a>
 	  <!-- Dropdown - User Information -->
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                <a class="dropdown-item" href="#">
+                <a id="op1" class="dropdown-item" onclick="alterarHorario('op1')">
                   <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
                   14:00 - 16:00
                 </a>
 				<div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">
+                <a id="op2" class="dropdown-item" onclick="alterarHorario('op2')">
                   <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
                   14:30 - 16:30
                 </a>
 				<div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">
+                <a id="op3" class="dropdown-item" onclick="alterarHorario('op3')">
                   <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
                   9:30 - 11:30
                 </a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">
+                <a id="op4" class="dropdown-item" onclick="alterarHorario('op4')">
                   <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
                   10:00 - 12:00
                 </a>
@@ -196,5 +196,16 @@
   <!-- Page level custom scripts -->
   <script src="js/demo/chart-area-demo.js"></script>
   <script src="js/demo/chart-pie-demo.js"></script>
+
+  <script>
+  	function alterarHorario(op){
+
+  		var horas = document.getElementById("horas").textContent;
+
+  		document.getElementById("horas").textContent = document.getElementById(op).textContent
+  		document.getElementById(op).textContent = horas
+
+  	}
+  </script>
 </body>
 </html>
