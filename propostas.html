@@ -29,7 +29,7 @@
   <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
       <!-- Sidebar - Brand -->
-      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="pagina_inicial.html">
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="pagina_inicialGuia.html">
         <div class="sidebar-brand-icon rotate-n-15">
 		  <img src="img/buss1.png" width="50%"></img>
         </div>
@@ -127,8 +127,8 @@
     <h1 class="h3 mb-0 text-gray-800" align="center">Propostas</h1>
   </div>
 
-  <div class="card shadow mb-4">
-    <a href="#" class="d-block card-header py-3" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="collapseCardExample">
+  <div id="p1" class="card shadow mb-4">
+    <a href="#collapseCardExample" class="d-block card-header py-3" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="collapseCardExample">
         <h6 class="m-0 font-weight-bold text-primary">Proposta #1</h6>
     </a>
     <div class="collapse show" id="collapseCardExample">
@@ -143,30 +143,31 @@
         </div>
 
         <div  class="my-2"></div>
-        <a href="#" align="center" class="btn btn-success btn-icon-split align-items-center">
+        <a onclick="fechar('p1')" align="center" class="btn btn-success btn-icon-split align-items-center">
           <span class="icon text-white-50">
             <i class="fas fa-check"></i>
           </span>
-          <span class="text">Aceitar</span>
+          <span class="text text-white-50">Aceitar</span>
         </a>
         <div  class="my-2"></div>
-        <a href="#" align="center" class="btn btn-secondary btn-icon-split">
+        <a onclick="fechar('p1')" align="center" class="btn btn-secondary btn-icon-split align-items-center">
           <span class="icon text-gray-600">
             <i class="fas fa-arrow-right"></i>
           </span>
-          <span class="text">Recusar</span>
+          <span class="text text-white-50">Recusar</span>
         </a>
         <div  class="my-2"></div>
       </div>
     </div>
   </div>
+
   <div class="my-2"></div>
 
-  <div class="card shadow mb-4">
-    <a href="#" class="d-block card-header py-3" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="collapseCardExample">
+  <div id="p2" class="card shadow mb-4">
+    <a href="#collapseCardExample2" class="d-block card-header py-3" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="collapseCardExample2">
         <h6 class="m-0 font-weight-bold text-primary">Proposta #2</h6>
     </a>
-    <div class="collapse show" id="collapseCardExample">
+    <div class="collapse show" id="collapseCardExample2">
       <div class="card-body">
         Tipo de Visita: Pré definida -> Praias
         <p></p>Duração: 2:30h
@@ -178,23 +179,24 @@
         </div>
 
         <div  class="my-2"></div>
-        <a href="#" align="center" class="btn btn-success btn-icon-split align-items-center">
+        <a onclick="fechar('p2')" align="center" class="btn btn-success btn-icon-split align-items-center">
           <span class="icon text-white-50">
             <i class="fas fa-check"></i>
           </span>
-          <span class="text">Aceitar</span>
+          <span class="text text-white-50">Aceitar</span>
         </a>
         <div  class="my-2"></div>
-        <a href="#" align="center" class="btn btn-secondary btn-icon-split">
+        <a onclick="fechar('p2')" align="center" class="btn btn-secondary btn-icon-split align-items-center">
           <span class="icon text-gray-600">
             <i class="fas fa-arrow-right"></i>
           </span>
-          <span class="text">Recusar</span>
+          <span class="text text-white-50">Recusar</span>
         </a>
         <div  class="my-2"></div>
       </div>
     </div>
   </div>
+
   <div class="my-2"></div>
 
   </div>
@@ -215,6 +217,15 @@
   <!-- Page level custom scripts -->
   <script src="js/demo/chart-area-demo.js"></script>
   <script src="js/demo/chart-pie-demo.js"></script>
+
+  <script>
+    function fechar(p){
+
+      var element = document.getElementById(p);
+      element.parentNode.removeChild(element);
+
+    }
+  </script>
 
 </body>
 </html>
