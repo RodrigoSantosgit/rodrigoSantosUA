@@ -8,6 +8,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- Ensures optimal rendering on mobile devices. -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" /> <!-- Optimal Internet Explorer compatibility -->
 
   <title>PickAGuide</title>
 
@@ -31,11 +33,11 @@
       <!-- Sidebar - Brand -->
       <a class="sidebar-brand d-flex align-items-center justify-content-center" href="pagina_inicial.html">
         <div class="sidebar-brand-icon rotate-n-15">
-      <img src="img/buss1.png" width="50%"></img>
+		  <img src="img/buss1.png" width="50%"></img>
         </div>
         <div class="sidebar-brand-text mx-3">PickAGuide</div>
       </a>
-    <!-- Divider -->
+	  <!-- Divider -->
       <hr class="sidebar-divider my-0">
 
       <!-- Nav Item - Dashboard -->
@@ -54,7 +56,7 @@
 
       <!-- Nav Item - Pages Collapse Menu -->
       <li class="nav-item">
-        <a class="nav-link">
+        <a class="nav-link" href="#">
           <i class="fas fa-fw fa-cog"></i>
           <span>Minha conta</span>
         </a>
@@ -73,14 +75,14 @@
 
       <!-- Nav Item - Pages Collapse Menu -->
       <li class="nav-item">
-        <a class="nav-link" href="#">
+        <a class="nav-link" href="historico.html">
           <i class="fas fa-fw fa-folder"></i>
           <span>Histórico</span>
         </a>
       </li>
 
       <hr class="sidebar-divider">
-
+      
       <!-- Nav Item - Charts -->
       <li class="nav-item">
         <a class="nav-link" href="index.html">
@@ -107,41 +109,55 @@
       <i class="fa fa-bars"></i>
     </button>
     <ul class="navbar-nav ml-auto">
-    <!-- Nav Item - User Information -->
+	  <!-- Nav Item - User Information -->
       <div class="topbar-divider d-none d-sm-block"></div>
-    <li class="nav-item dropdown no-arrow">
+	  <li class="nav-item dropdown no-arrow">
         <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         <span class="mr-2 d-none d-lg-inline text-gray-600 small">Susana Pinto</span>
         <img class="img-profile rounded-circle" src="img/boneco-woman.png"></img>
         </a>
     </li>
-  </ul>
+	  </ul>
   </nav>
   <!-- Begin Page Content -->
   <div class="container-fluid">
 
-    <div  class="my-2"></div>
+    <div class="card shadow mb-4">
+      <a href="#collapseCardExample" class="d-block card-header py-3" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="collapseCardExample">
+          <h6 class="m-0 font-weight-bold text-primary">Histórico de Pagamentos</h6>
+      </a>
+      <div class="collapse show" id="collapseCardExample">
+        <div id="hist"class="card-body">
 
-    <a role="button" href="pagamentos.html">
-    <div class="col-xl-3 col-md-6 mb-4">
-      <div class="card border-bottom-info shadow h-100 py-2">
-        <div class="card-body">
-          <div class="row no-gutters align-items-center">
-            <div class="col mr-2">
-              <div class="text-xs font-weight-bold text-info text-uppercase mb-1">histórico</div>
-              <div class="h5 mb-0 font-weight-bold text-gray-800">Pagamentos</div>
-            </div>
-            <div class="col-auto">
-              <i class="fas fa-dollar-sign fa-sm"></i>
-              <span class="badge badge-danger badge-counter">1</span>
-            </div>
-          </div>
         </div>
       </div>
     </div>
-    </a>
 
-  <div  class="my-2"></div>
+    <div class="my-2"></div>
+
+    <div class="card shadow mb-4">
+      <a href="#collapseCardExample2" class="d-block card-header py-3" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="collapseCardExample2">
+          <h6 class="m-0 font-weight-bold text-primary">Pagamentos por Efetuar</h6>
+      </a>
+      <div class="collapse show" id="collapseCardExample2">
+        <div id="detailPag1" class="card-body">
+
+          Tipo de Visita: Pré Definida -> Moliceiros
+          <p></p>
+          <p>Valor: 50 €</p>
+
+          <a id="pag1" onclick="fechar('pag1', 'detailPag1')" href="#" class="btn btn-success btn-icon-split align-items-center">
+            <span class="icon text-white-50">
+              <i class="fas fa-check"></i>
+            </span>
+            <span class="text">PayPal</span>
+          </a>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="my-2"></div>
 
   </div>
   </div>
@@ -168,5 +184,20 @@
   <!-- Page level custom scripts -->
   <script src="js/demo/chart-area-demo.js"></script>
   <script src="js/demo/chart-pie-demo.js"></script>
+
+  <script>
+    function fechar(p, dtPag){
+
+      var content = document.getElementById(dtPag).textContent;
+      document.getElementById("hist").textContent += "\n" + content
+
+      document.getElementById(dtPag).textContent = "";
+
+      var element = document.getElementById(p);
+      element.parentNode.removeChild(element);
+
+    }
+  </script>
+
 </body>
 </html>
