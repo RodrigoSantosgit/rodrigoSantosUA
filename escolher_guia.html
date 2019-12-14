@@ -121,7 +121,7 @@
   <div class="d-sm-flex align-items-center justify-content-between mb-4">
     <h1 class="h3 mb-0 text-gray-800" align="center">Escolha de Guia</h1>
   </div>
-  <a role="button" href="guiaDetalhes.html">
+  <!--a role="button" href="guiaDetalhes.html"-->
     <div class="col-xl-3 col-md-6 mb-4">
               <div class="card border-left-info shadow h-100 py-2">
                 <div class="card-body">
@@ -130,7 +130,12 @@
                       <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Guia</div>
                       <div class="row no-gutters align-items-center">
                         <div class="col-auto">
-                          <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">João Simões</div>
+                          <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">
+                            <div onclick="guide('guiaDetalhes.html', 1)" class="custom-control custom-checkbox small">
+                              <input type="checkbox" class="custom-control-input" id="customCheck">
+                              <label class="custom-control-label" for="customCheck">João Simões</label>
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -141,8 +146,8 @@
                 </div>
               </div>
     </div>
-	</a>
-	<a role="button" href="guiaDetalhesAna.html">
+	<!--/a-->
+	<!--a role="button" href="guiaDetalhesAna.html"-->
 	<div class="col-xl-3 col-md-6 mb-4">
               <div class="card border-left-info shadow h-100 py-2">
                 <div class="card-body">
@@ -151,7 +156,12 @@
                       <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Guia</div>
                       <div class="row no-gutters align-items-center">
                         <div class="col-auto">
-                          <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">Ana Mendes</div>
+                          <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">
+                            <div onclick="guide('guiaDetalhesAna.html', 2)" class="custom-control custom-checkbox small">
+                              <input type="checkbox" class="custom-control-input" id="customCheck2">
+                              <label class="custom-control-label" for="customCheck2">Ana Mendes</label>
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -162,11 +172,74 @@
                 </div>
               </div>
     </div>
-	</a>
+
+    <div class="my-2"></div>
+  <a id="next" href="#" class="btn btn-primary btn-icon-split">
+    <span class="icon text-white-50">
+      <i class="fas fa-check"></i>
+    </span>
+    <span class="text">Seguinte</span>
+  </a>
+
+  <div class="my-2"></div>
+  <a href="pagina_inicial.html" class="btn btn-secondary btn-icon-split">
+    <span class="icon text-gray-600">
+      <i class="fas fa-arrow-right"></i>
+    </span>
+    <span class="text">Retroceder</span>
+  </a>
+  <div  class="my-2"></div>
+	<!--/a-->
   </div>
   </div>
   </div>
   </div>
+
+  <a class="scroll-to-top rounded" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+  </a>
+
+  <script>
+    function guide(guide,check){
+      var nextPage = document.getElementById("next");
+
+      if (document.getElementById("customCheck").checked && document.getElementById("customCheck2").checked){
+        nextPage.href = "#";
+        return;
+      }
+
+      if (check == 1){
+        if (document.getElementById("customCheck").checked) {
+          nextPage.href = guide;
+          return
+        }
+        else if (document.getElementById("customCheck2").checked){
+          nextPage.href = "guiaDetalhesAna.html";
+          return
+        }
+        else{
+          nextPage.href = "#";
+          return;
+        }
+      }
+      if (check == 2){
+        if (document.getElementById("customCheck2").checked) {
+          nextPage.href = guide;
+          return;
+        }
+        else if (document.getElementById("customCheck").checked){
+          nextPage.href = "guiaDetalhes.html";
+          return;
+        }
+        else{
+          nextPage.href = "#";
+          return;
+        }
+      }
+      return;
+    }
+  </script>
+
   <!-- Bootstrap core JavaScript-->
   <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
