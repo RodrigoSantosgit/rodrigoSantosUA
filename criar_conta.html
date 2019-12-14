@@ -52,16 +52,16 @@
               <div class="collapse show" id="collapseCardExample1">
                 <div class="card-body">
                   
-                  <div class="custom-control custom-checkbox small">
-                    <input type="checkbox" class="custom-control-input" id="customCheck2">
-                    <label class="custom-control-label" for="customCheck2">Guia</label>
+                  <div onclick="type()" class="custom-control custom-checkbox small">
+                    <input type="checkbox" class="custom-control-input" id="customCheck">
+                    <label class="custom-control-label" for="customCheck">Guia</label>
                   </div>
 
                   <div  class="my-2"></div>
 
-                  <div class="custom-control custom-checkbox small">
-                    <input type="checkbox" class="custom-control-input" id="customCheck3">
-                    <label class="custom-control-label" for="customCheck3">Turista</label>
+                  <div onclick="type()" class="custom-control custom-checkbox small">
+                    <input type="checkbox" class="custom-control-input" id="customCheck2">
+                    <label class="custom-control-label" for="customCheck2">Turista</label>
                   </div>
                 </div>
               </div>
@@ -69,7 +69,7 @@
 
             <div  class="my-2"></div>
 
-		    		<a href="index.html" class="btn btn-primary btn-user btn-block">
+		    		<a id="next" href="#" class="btn btn-primary btn-user btn-block">
         				Registar
       			</a>
 		     	</form>
@@ -89,6 +89,29 @@
   <a class="scroll-to-top rounded" href="#page-top">
     <i class="fas fa-angle-up"></i>
   </a>
+
+  <script>
+    function type(){
+      var nextPage = document.getElementById("next");
+
+      if (document.getElementById("customCheck").checked && document.getElementById("customCheck2").checked){
+        nextPage.href = "#";
+        return;
+      }
+      else if (document.getElementById("customCheck").checked){
+      	nextPage.href = "index.html";
+      	return;
+      }
+      else if (document.getElementById("customCheck2").checked){
+      	nextPage.href = "index.html";
+      	return;
+      }
+      else{
+      	nextPage.href = "#";
+      	return;
+      }
+    }
+  </script>
 
   <!-- Bootstrap core JavaScript-->
   <script src="vendor/jquery/jquery.min.js"></script>
